@@ -1,0 +1,13 @@
+sudo: required
+dist: xenial
+
+branches:
+  only:
+  - master
+  - /^v[0-9]/
+
+services:
+  - docker
+
+script:
+- bash -x test.sh

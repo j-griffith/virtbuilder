@@ -7,5 +7,5 @@ DISKSIZE=$2
 
 [[ -n "$DISKSIZE" ]] && SIZEARG="--size $DISKSIZE" || :
 
-LIBGUESTFS_BACKEND=direct
+export LIBGUESTFS_BACKEND=direct
 virt-builder --format raw -o /pvc/disk.img $SIZEARG $OSNAME

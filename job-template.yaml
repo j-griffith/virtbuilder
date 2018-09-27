@@ -3,17 +3,13 @@ kind: Template
 metadata:
   name: virtbuilder-job
   annotations:
-    openshift.io/display-name: "Red Hat Enterprise Linux 7.5 VM"
+    openshift.io/display-name: "Populate a PVC with a VM image"
     description: >-
-      This template can be used to create a VM suitable for
-      Red Hat Enterprise Linux 7.5.
-      The template assumes that a PVC is available which is providing the
-      necessary RHEL disk image.
-    tags: "kubevirt,virtualmachine,linux,rhel"
-    iconClass: "icon-rhel"
+      This template can be used to populate a PVC with a virt-builder image.
+      Use `virt-builder --list` to get all available templates.
     openshift.io/provider-display-name: "KubeVirt"
-    openshift.io/documentation-url: "https://github.com/fabiand/common-templates"
-    openshift.io/support-url: "https://github.com/fabiand/common-templates/issues"
+    openshift.io/documentation-url: "https://github.com/fabiand/virtbuilder"
+    openshift.io/support-url: "https://github.com/fabiand/virtbuilder/issues"
     template.openshift.io/bindable: "false"
 objects:
 - apiVersion: batch/v1
