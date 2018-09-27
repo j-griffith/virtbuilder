@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: virtbuilder
+  labels:
+    app: virtbuilder
+spec:
+  template:
+    metadata:
+      labels:
+        app: virtbuilder
+    spec:
+      containers:
+      - name: virtbuilder
+        image: quay.io/fabiand/virtbuilder
+        imagePullPolicy: IfNotPresent
+        args:
+        - "fedora28"
+        volumeMounts:
+        - mountPath: "/pvc"
+          name: target
+      volumes:
+      - name: target
+        persistentVolumeClaim:
+          claimName: fedora28
