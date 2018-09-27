@@ -2,4 +2,8 @@ FROM fedora
 
 RUN dnf install -y libguestfs-tools-c
 
-ENTRYPOINT ["/usr/bin/virt-builder", "--format", "raw", "-o", "/pvc/disk.img"]
+RUN mkdir /pvc
+
+ADD virtbuilder /usr/local/bin/virtbuilder
+
+ENTRYPOINT ["/usr/local/bin/virtbuilder"]

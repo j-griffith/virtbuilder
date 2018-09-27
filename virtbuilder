@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -xe
+
+OSNAME=$1
+DISKSIZE=$2
+
+[[ -n "$DISKSIZE" ]] && SIZEARG="--size $DISKSIZE" || :
+
+LIBGUESTFS_BACKEND=direct
+virt-builder --format raw -o /pvc/disk.img $SIZEARG $OSNAME
