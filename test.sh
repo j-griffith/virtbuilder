@@ -2,5 +2,5 @@
 
 set -xe
 
-docker build
-docker run
+make build
+make run
