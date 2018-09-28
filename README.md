@@ -6,10 +6,10 @@ Populate a given PVC with a disk image known by [virt-builder](http://libguestfs
 
 ```bash
 $ oc process --local -f pvc-template.yaml NAME=fedora-28 SIZE=11G | \
-  oc apply -f -
+  kubectl apply -f -
 
 $ oc process --local -f job-template.yaml OSNAME=fedora-28 PVCNAME=fedora-28 \
-  DISKSIZE=10G | oc apply -f -
+  DISKSIZE=10G | kubectl apply -f -
 ```
 
 Wait for the job to finish, then use it with a VM.
@@ -22,7 +22,7 @@ this, create the following PVC:
 
 ```bash
 $ oc process --local -f pvc-template.yaml NAME=virtbuilder-cache SIZE=10G | \
-  oc apply -f -
+  kubectl apply -f -
 ```
 
 And uncomment the relevant lines in the [job template](job-template.yaml).
