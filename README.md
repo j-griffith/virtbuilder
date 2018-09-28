@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/fabiand/virtbuilder.svg?branch=master)](https://travis-ci.com/fabiand/virtbuilder)
+
 # Purpose
 
 Populate a given PVC with a disk image known by [virt-builder](http://libguestfs.org/virt-builder.1.html).
