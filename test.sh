@@ -2,7 +2,10 @@
 
 set -xe
 
-make build
+if [[ -z "$USE_QUAY" ]];
+then
+  make build
+fi
 make run
 
 oc process --local -f pvc-template.yaml NAME=virtbuilder-cache SIZE=11G | \
