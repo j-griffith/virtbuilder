@@ -14,7 +14,7 @@ oc process --local -f pvc-template.yaml NAME=fedora-28 SIZE=11G | \
 oc process --local -f job-template.yaml OSNAME=fedora-28 PVCNAME=fedora-28 \
   DISKSIZE=10G | kubectl apply -f -
 
-kubectl wait --for=condition=ready --timeout=30s -l app=virtbuilder
+kubectl wait --for=condition=ready --timeout=30s jobs -l app=virtbuilder
 
 kubectl describe jobs
 
