@@ -9,3 +9,6 @@ DISKSIZE=$2
 
 export LIBGUESTFS_BACKEND=direct
 virt-builder --format raw -o /pvc/disk.img $SIZEARG $OSNAME
+
+# 107:107 is qemu as an owner
+chown 107:107 /pvc/disk.img
